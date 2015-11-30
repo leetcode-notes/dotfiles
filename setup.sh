@@ -1,6 +1,4 @@
-#https://tr.im/rgarD
-#https://goo.gl/5EgzWd
-#http://bit.ly/1XniIfV
+#curl -L http://git.io/vB5Sa | bash
 curl -L https://github.com/raghavgautam/init/archive/master.zip -o /tmp/`whoami`.zip
 unzip -o -d /tmp/`whoami`/ /tmp/`whoami`.zip
 chmod -R 777 /tmp/`whoami`/
