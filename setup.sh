@@ -19,7 +19,7 @@ if [ "$ME" == "root" ]; then
         if [ -f "/etc/SuSE-release" ]; then
             zypper addrepo -n -f http://download.opensuse.org/distribution/11.4/repo/oss/ oss
         fi
-        zypper -n install $PKGS
+        zypper --no-gpg-checks --auto-agree-with-licenses -n install $PKGS
     else
         echo "unknown package manager"
     fi
