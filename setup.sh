@@ -10,16 +10,16 @@ mv /tmp/`whoami`/init-master/* /tmp/`whoami`/init-master/.[^.]* ~/.emacs.d/
 #install packages
 ME=`whoami`
 PKGS="emacs screen tree git tmux"
-if [ "$ME" == "root" ]; then
+if ( sudo -v ); then
     if hash yum 2>/dev/null; then
-        yum -y install $PKGS
+        sudo yum -y install $PKGS
     elif hash apt-get 2>/dev/null; then
-        apt-get -y install $PKGS
+        sudo apt-get -y install $PKGS
     elif hash zypper 2>/dev/null; then
         if [ -f "/etc/SuSE-release" ]; then
-            zypper addrepo -n -f http://download.opensuse.org/distribution/11.4/repo/oss/ oss
+            sudo zypper addrepo -n -f http://download.opensuse.org/distribution/11.4/repo/oss/ oss
         fi
-        zypper --no-gpg-checks -n install $PKGS
+        sudo zypper --no-gpg-checks -n install $PKGS
     else
         echo "unknown package manager"
     fi
