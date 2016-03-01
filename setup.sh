@@ -1,4 +1,5 @@
 #curl -L http://git.io/vB5Sa | bash
+#bash <(curl -L http://git.io/vB5Sa)
 curl -L https://github.com/raghavgautam/init/archive/master.zip -o /tmp/`whoami`.zip
 unzip -o -d /tmp/`whoami`/ /tmp/`whoami`.zip
 chmod -R 777 /tmp/`whoami`/
@@ -8,7 +9,6 @@ mv /tmp/`whoami`/init-master/* /tmp/`whoami`/init-master/.[^.]* ~/.emacs.d/
 ~/.emacs.d/setup.sh
 
 #install packages
-ME=`whoami`
 PKGS="emacs screen tree git tmux"
 if ( sudo -v ); then
     if hash yum 2>/dev/null; then
