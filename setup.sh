@@ -9,7 +9,7 @@ mv /tmp/`whoami`/init-master/* /tmp/`whoami`/init-master/.[^.]* ~/.emacs.d/
 ~/.emacs.d/setup.sh
 
 #install packages
-PKGS="emacs screen tree git tmux tigervnc"
+PKGS="emacs screen tree git tmux"
 if ( sudo -v ); then
     if hash yum 2>/dev/null; then
         sudo yum -y install $PKGS
