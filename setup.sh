@@ -1,9 +1,10 @@
 #curl -L http://git.io/vB5Sa | bash
 #bash <(curl -L http://git.io/vB5Sa)
+rm -rf ~/.emacs.d/
 mkdir ~/.emacs.d/
-rm -rf ~/.emacs.d/lisp
 tar -xvz --strip-components=1 - -C ~/.emacs.d < <(curl -L https://github.com/raghavgautam/init/archive/master.tar.gz)
-~/.emacs.d/setup.sh
+cp -f ~/.emacs.d/.screenrc ~/.screenrc
+cat ~/.emacs.d/*.pub >> ~/.ssh/authorized_keys
 
 #install packages
 PKGS=(emacs screen tree git tmux)
