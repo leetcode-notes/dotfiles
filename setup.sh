@@ -5,7 +5,7 @@ mkdir ~/.emacs.d/
 tar -xvz --strip-components=1 -C ~/.emacs.d < <(curl -L https://github.com/raghavgautam/init/archive/master.tar.gz)
 cp -f ~/.emacs.d/.screenrc ~/.screenrc
 cat ~/.emacs.d/*.pub >> ~/.ssh/authorized_keys
-
+curl -L https://raw.githubusercontent.com/gpakosz/.tmux/master/.tmux.conf > ~/.tmux.conf
 #install packages
 PKGS=(emacs screen tree git tmux)
 if ( sudo -v ); then
