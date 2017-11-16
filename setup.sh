@@ -6,6 +6,12 @@ tar -xvz --strip-components=1 -C ~/.emacs.d < <(curl -L https://github.com/ragha
 cp -f ~/.emacs.d/.screenrc ~/.screenrc
 cat ~/.emacs.d/*.pub >> ~/.ssh/authorized_keys
 curl -L https://raw.githubusercontent.com/gpakosz/.tmux/master/.tmux.conf > ~/.tmux.conf
+echo >> ~/.tmux.conf
+echo '#---------- customization ----------' >> ~/.tmux.conf
+echo 'bind -r p previous-window' >> ~/.tmux.conf
+echo 'bind -r n next-window' >> ~/.tmux.conf
+echo 'bind -r w list-window' >> ~/.tmux.conf
+echo 'bind Tab last-window' >> ~/.tmux.conf
 #install packages
 PKGS=(emacs screen tree git tmux)
 if ( sudo -v ); then
