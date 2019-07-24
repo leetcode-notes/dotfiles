@@ -18,6 +18,7 @@ if ( sudo -v ); then
     if hash yum 2>/dev/null; then
         for p in "${PKGS[@]}"; do sudo yum -y install "$p"; done
     elif hash apt-get 2>/dev/null; then
+        apt-get update
         for p in "${PKGS[@]}"; do sudo apt-get -y install "$p"; done
     elif hash zypper 2>/dev/null; then
         if [ -f "/etc/SuSE-release" ]; then
